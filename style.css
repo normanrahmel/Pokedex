@@ -7,6 +7,10 @@
         margin: 0 !important;
     }
     
+    .containerContent {
+        margin-bottom: 30px;
+    }
+    
     img {
         opacity: 0.9;
     }
@@ -20,8 +24,6 @@
         color: white;
         padding: 35px;
     }
-    
-    .containerContent {}
     
     .listPokemonImage {
         height: 150px;
@@ -39,16 +41,31 @@
         background-color: #dbdbdb;
         border-radius: 30px;
         border: 1px solid black;
-        margin: 10px;
+        margin: 25px;
         height: 280px !important;
         width: 280px !important;
         align-items: center;
         display: flex;
         justify-content: center;
+        cursor: pointer;
     }
     
     #listPokemonName {
         margin-bottom: 20px;
+    }
+    
+    .detailView {
+        z-index: 60;
+        height: 100vh;
+        background: rgba(41, 41, 41, 0.659);
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        color: white;
     }
     
     .grass {
@@ -81,4 +98,47 @@
         background-color: rgb(151, 151, 151);
         padding: 10px;
         border-radius: 30px;
+    }
+    /*Footer*/
+    
+    footer {
+        align-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        padding: 80px;
+        height: 150px;
+        background-color: #dbdbdb;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .paddingLeftRight {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    @media (max-width: 850px) {
+        footer {
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            display: flex;
+            height: 200px;
+            word-wrap: break-word;
+        }
+        .law {
+            margin-top: 16px;
+            word-wrap: break-word;
+        }
+        .socialMedia {
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
     }

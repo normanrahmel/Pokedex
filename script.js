@@ -69,4 +69,54 @@ function renderPokemonListCardHTML(i, pokemonName, pokemonImage, pokemonType) {
         `;
 }
 
-//col-12 col-sm-6 col-md-4
+
+function openDetailView(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight) {
+    document.getElementById('containerDetailView').classList.add('detailView');
+    containerDetailView.innerHTML = templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight);
+}
+
+
+function closeDetailView() {
+    document.getElementById('containerDetailView').classList.remove('detailView');
+    containerDetailView.innerHTML = '';
+}
+
+
+function parametersDetailView(i) {
+    const pokemonName = pokemonDetails[i].name;
+    const pokemonImage = pokemonDetails[i].img;
+    const pokemonType = pokemonDetails[i].type;
+    const pokemonAbility = pokemonDetails[i].ability;
+    const pokemonHeight = pokemonDetails[i].height;
+    const pokemonWeight = pokemonDetails[i].weight;
+
+    templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight);
+}
+
+
+function templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight) {
+    return /*html*/ ` 
+
+<div class="detail__header" id="detail-header">
+
+    <h2 id="detailName">
+         ${pokemonName}
+    </h2>
+
+    <div class="" onclick="closeDetailView()">
+        <div class=""></div>
+        <span class="">close</span>
+    </div>
+
+    <div class="detailPicContainer">
+        <img src="${pokemonImage}">
+    </div>
+
+    <div class="">
+        <p>Ability: <span id="detailAbility">${pokemonAbility}</span></p>
+        <p>Height: <span id="detailHeight">${pokemonHeight}</span></p>
+        <p>Weight: <span id="detailWeight">${pokemonWeight}</span></p>
+    </div>
+</div>
+    `;
+}
