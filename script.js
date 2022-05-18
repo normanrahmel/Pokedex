@@ -59,14 +59,14 @@ function renderPokemonListCardHTML(i, pokemonName, pokemonImage, pokemonType) {
 
     document.getElementById('listPokemonCards').innerHTML += /*html*/ `
     
-        <div class="col-12 col-sm-6 col-md-4" onclick="openDetailView(${i})">
-            <div class="card mb-4 list__card shadow-sm hvr-float-shadow">
-                <img id="listPokemonImage" class="list__pokemon__image"  src="${pokemonImage}" alt="${pokemonName}">
-                <div class="card-body">
-                    <h5 id="listPokemonName" class="card-title">${pokemonName}</h5>
-                    <span id="listPokemonFeature" class="card__text card__text__bg__${pokemonType}">${pokemonType}</span>
-                </div>
+        <div class="pokemonCards" onclick="openDetailView(${i})">
+            <div>
+                <img id="listPokemonImage" class="listPokemonImage"  src="${pokemonImage}">
+                    <h3 id="listPokemonName">${pokemonName}</h3>
+                    <span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>
             </div>
         </div>
         `;
 }
+
+//col-12 col-sm-6 col-md-4
