@@ -75,25 +75,25 @@ function templateOpenDetailViewHTML(pokemonId) {
 
     return /*html*/ ` 
 
-<div class="detail__header" id="detail-header">
+<div class="detailView">
+    <div class="containerContentDetailView">
+        <h2 id="detailName">
+            ${pokemonName}
+        </h2>
 
-    <h2 id="detailName">
-         ${pokemonName}
-    </h2>
+        <div class="detailButton" >
+            <button onclick="closeDetailView()" class="btn">close</button>
+        </div>
 
-    <div class="" onclick="closeDetailView()">
-        <div class=""></div>
-        <span class="">close</span>
-    </div>
+        <div class="detailImg">
+            <img src="${pokemonImage}">
+        </div>
 
-    <div class="detailPicContainer">
-        <img src="${pokemonImage}">
-    </div>
-
-    <div class="">
-        <p>Ability: <span id="detailAbility">${pokemonAbility}</span></p>
-        <p>Height: <span id="detailHeight">${pokemonHeight}</span></p>
-        <p>Weight: <span id="detailWeight">${pokemonWeight}</span></p>
+        <div class="attribute">
+            <p>Ability: <span id="detailAbility">${pokemonAbility}</span></p>
+            <p>Height: <span id="detailHeight">${pokemonHeight}</span></p>
+            <p>Weight: <span id="detailWeight">${pokemonWeight}</span></p>
+        </div>
     </div>
 </div>
     `;
