@@ -1,78 +1,57 @@
-let pokemonJSON;
+let loadedPokemons = [];
 
 
-function init() {
-    renderPokedex();
-}
-
-
-async function renderPokedex() {
+async function init() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`;
     let response = await fetch(url);
-    pokemonJSON = await response.json();
+    let pokemonList = await response.json();
 
-    console.log('Zeig mir meine Datenstruktur', pokemonJSON);
+    console.log('Zeig mir meine Datenstruktur', pokemonList);
 
-    getSinglePokemonData(pokemonJSON);
+    getAndRenderPokemonFromList(pokemonList);
 }
 
 
-async function getSinglePokemonData(pokemonJSON) {
-    for (let i = 0; i < pokemonJSON.results.length; i++) {
+async function getAndRenderPokemonFromList(pokemonList) {
 
-        const singlePokemonURL = pokemonJSON['results'][i]['url'];
-        const response = await fetch(singlePokemonURL);
-        const singlePokemonJSON = await response.json();
-        renderPokemonListCard(i, singlePokemonJSON);
+    for (let i = 0; i < pokemonList.results.length; i++) {
+        const pokemon = await getPokemonByUrl(pokemonList['results'][i]['url']);
+        loadedPokemons.push(pokemon);
+        renderPokemon(pokemon);
+        //renderPokemonListCard(i, singlePokemonJSON);
     }
 }
 
 
-function renderPokemonListCard(i, singlePokemonJSON) {
-    const pokemonName = singlePokemonJSON['forms'][0]['name'];
-    const pokemonImage = singlePokemonJSON['sprites']['other']['dream_world']['front_default'];
-    const pokemonType = singlePokemonJSON['types'][0]['type']['name'];
+function renderPokemon(pokemon) {
 
-    const pokemonAbility = singlePokemonJSON['abilities'][0]['ability']['name'];
-    const pokemonHeight = singlePokemonJSON['height'];
-    const pokemonWeight = singlePokemonJSON['weight'];
-
-    pushSinglePokemonDetails(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight);
-
-    renderPokemonListCardHTML(i, pokemonName, pokemonImage, pokemonType);
-}
-
-
-function pushSinglePokemonDetails(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight) {
-    const pokemon = {
-        'name': pokemonName,
-        'img': pokemonImage,
-        'type': pokemonType,
-        'ability': pokemonAbility,
-        'height': pokemonHeight,
-        'weight': pokemonWeight
-    }
-}
-
-
-function renderPokemonListCardHTML(i, pokemonName, pokemonImage, pokemonType) {
+    const pokemonName = pokemon['forms'][0]['name'];
+    const pokemonImage = pokemon['sprites']['other']['dream_world']['front_default'];
+    const pokemonType = pokemon['types'][0]['type']['name'];
 
     document.getElementById('listPokemonCards').innerHTML += /*html*/ `
     
-        <div class="pokemonCards" onclick="openDetailView(${i})">
-            <div>
-                <img id="listPokemonImage" class="listPokemonImage"  src="${pokemonImage}">
-                    <h3 id="listPokemonName">${pokemonName}</h3>
-                    <span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>
-            </div>
+    <div class="pokemonCards" onclick="openDetailView(${pokemon.id})">
+        <div>
+            <img id="listPokemonImage" class="listPokemonImage"  src="${pokemonImage}">
+                <h3 id="listPokemonName">${pokemonName}</h3>
+                <span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>
         </div>
-        `;
+    </div>
+    `;
 }
 
 
-function openDetailView(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight) {
+async function getPokemonByUrl(pokemonUrl) {
+    const response = await fetch(pokemonUrl);
+    const singlePokemonJSON = await response.json();
+    return singlePokemonJSON;
+}
+
+
+function openDetailView(pokemonId) {
     document.getElementById('containerDetailView').classList.add('detailView');
-    containerDetailView.innerHTML = templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight);
+    containerDetailView.innerHTML = templateOpenDetailViewHTML(pokemonId);
 }
 
 
@@ -82,19 +61,18 @@ function closeDetailView() {
 }
 
 
-function parametersDetailView(i) {
-    const pokemonName = pokemonDetails[i].name;
-    const pokemonImage = pokemonDetails[i].img;
-    const pokemonType = pokemonDetails[i].type;
-    const pokemonAbility = pokemonDetails[i].ability;
-    const pokemonHeight = pokemonDetails[i].height;
-    const pokemonWeight = pokemonDetails[i].weight;
+function templateOpenDetailViewHTML(pokemonId) {
 
-    templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight);
-}
+    const pokemon = loadedPokemons.find(p => p.id == pokemonId)
 
+    const pokemonName = pokemon['forms'][0]['name'];
+    const pokemonImage = pokemon['sprites']['other']['dream_world']['front_default'];
+    const pokemonType = pokemon['types'][0]['type']['name'];
 
-function templateOpenDetailViewHTML(pokemonName, pokemonImage, pokemonType, pokemonAbility, pokemonHeight, pokemonWeight) {
+    const pokemonAbility = pokemon['abilities'][0]['ability']['name'];
+    const pokemonHeight = pokemon['height'];
+    const pokemonWeight = pokemon['weight'];
+
     return /*html*/ ` 
 
 <div class="detail__header" id="detail-header">

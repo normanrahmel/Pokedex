@@ -53,20 +53,7 @@
     #listPokemonName {
         margin-bottom: 20px;
     }
-    
-    .detailView {
-        z-index: 60;
-        height: 100vh;
-        background: rgba(41, 41, 41, 0.659);
-        top: 0;
-        left: 0;
-        right: 0;
-        position: absolute;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        color: white;
-    }
+    /*Pokemon Color-Typs*/
     
     .grass {
         background-color: greenyellow;
@@ -98,6 +85,21 @@
         background-color: rgb(151, 151, 151);
         padding: 10px;
         border-radius: 30px;
+    }
+    /*Detail-View*/
+    
+    .detailView {
+        z-index: 60;
+        background: rgba(41, 41, 41, 0.659);
+        height: auto;
+        color: black;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     /*Footer*/
     
