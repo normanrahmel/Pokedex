@@ -18,7 +18,6 @@ async function getAndRenderPokemonFromList(pokemonList) {
         const pokemon = await getPokemonByUrl(pokemonList['results'][i]['url']);
         loadedPokemons.push(pokemon);
         renderPokemon(pokemon);
-        //renderPokemonListCard(i, singlePokemonJSON);
     }
 }
 
@@ -76,13 +75,16 @@ function templateOpenDetailViewHTML(pokemonId) {
     return /*html*/ ` 
 
 <div class="detailView">
-    <div class="containerContentDetailView">
-        <h2 id="detailName">
-            ${pokemonName}
-        </h2>
+    <div class="containerContentDetailView ${pokemonType}">
 
         <div class="detailButton" >
             <button onclick="closeDetailView()" class="btn">close</button>
+        </div>
+
+        <div class="detailName">
+        <h2>
+            ${pokemonName}
+        </h2>
         </div>
 
         <div class="detailImg">

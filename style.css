@@ -55,6 +55,11 @@
     }
     /*Pokemon Color-Typs*/
     
+    .oneSizeType {
+        height: 100px !important;
+        width: 100px !important;
+    }
+    
     .grass {
         background-color: greenyellow;
         padding: 10px;
@@ -64,6 +69,7 @@
     .fire {
         background-color: rgb(191, 0, 0);
         padding: 10px;
+        width: 90px;
         border-radius: 30px;
         color: white;
     }
@@ -105,10 +111,16 @@
     }
     
     .containerContentDetailView {
-        background-color: #dbdbdb;
-        height: 550px;
-        width: 550px;
+        height: 560px;
+        width: 560px;
         border-radius: 30px;
+    }
+    
+    .detailButton {
+        align-items: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        margin: 15px;
     }
     
     .detailName {
@@ -117,22 +129,25 @@
         justify-content: center;
     }
     
-    .detailButton {
-        align-items: flex-start;
-        display: flex;
-        justify-content: flex-start;
-        margin: 35px;
-    }
-    
     .detailImg img {
         height: 300px;
         width: 300px;
+        padding: 30px;
+    }
+    
+    .detailImg {
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
     
     .attribute {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        padding-left: 50px;
+        padding-bottom: 10px;
     }
     /*Footer*/
     
