@@ -18,7 +18,7 @@
 <body onload="init()">
     <div class="logo">
         <img src="img/pokemon-logo.png" alt="">
-        <input placeholder="Filter by Pokemon" type="text" id="filterPokemon" onchange="searchForPokemon()">
+        <input placeholder="Filter by Pokemon" type="text" id="filterPokemon" onkeyup="searchForPokemon()">
     </div>
 
     <div class="containerContent">
@@ -31,12 +31,12 @@
         </div>
     </div>
 
-    <footer class="paddingLeftRight">
+    <div class="footer">
         <div>
             ©Copyright 2022 Norman Rahmel
         </div>
 
-        <div class="socialMedia">
+        <div class="socialMedia paddingLeftRight">
 
             <a href="https://www.linkedin.com/in/normanrahmel" target="_blank"><img src="img/linkedin.png"></a>
 
@@ -52,7 +52,7 @@
             <a href="#" target="_blank">Datenschutz</a> |
             <a href="#" target="_blank">Impressum</a>
         </div>
-    </footer>
+    </div>
 </body>
 
 </html>
