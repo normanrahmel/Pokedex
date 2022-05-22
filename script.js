@@ -2,7 +2,7 @@ let loadedPokemons = [];
 
 
 async function init() {
-    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`;
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=30`;
     let response = await fetch(url);
     let pokemonList = await response.json();
 
@@ -99,4 +99,14 @@ function templateOpenDetailViewHTML(pokemonId) {
     </div>
 </div>
     `;
+}
+
+
+// SEARCH POKEMON
+
+function searchForPokemon() {
+    let searchPokemon = document.getElementById('filterPokemon').value;
+
+
+    console.log(searchPokemon.addEventListener(("keydown", searchForPokemon)))
 }

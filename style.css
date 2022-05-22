@@ -11,18 +11,33 @@
         margin-bottom: 30px;
     }
     
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    
+    .logo img {
+        height: 350px;
+        width: 450px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+    
+    input {
+        height: 60px;
+        width: 250px;
+        border-radius: 30px;
+        text-align: center;
+    }
+    
     img {
         opacity: 0.9;
     }
     
     img:hover {
         opacity: 1.0;
-    }
-    
-    .overline {
-        font-size: 55px;
-        color: white;
-        padding: 35px;
     }
     
     .listPokemonImage {
@@ -55,11 +70,6 @@
     }
     /*Pokemon Color-Typs*/
     
-    .oneSizeType {
-        height: 100px !important;
-        width: 100px !important;
-    }
-    
     .grass {
         background-color: greenyellow;
         padding: 10px;
@@ -69,7 +79,6 @@
     .fire {
         background-color: rgb(191, 0, 0);
         padding: 10px;
-        width: 90px;
         border-radius: 30px;
         color: white;
     }
@@ -89,6 +98,24 @@
     
     .normal {
         background-color: rgb(151, 151, 151);
+        padding: 10px;
+        border-radius: 30px;
+    }
+    
+    .poison {
+        background-color: #b347b3;
+        padding: 10px;
+        border-radius: 30px;
+    }
+    
+    .electric {
+        background-color: #f8d02f;
+        padding: 10px;
+        border-radius: 30px;
+    }
+    
+    .ground {
+        background-color: #e0bf68;
         padding: 10px;
         border-radius: 30px;
     }
