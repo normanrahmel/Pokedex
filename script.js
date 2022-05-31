@@ -122,10 +122,18 @@ function templateOpenDetailViewHTML(pokemonId) {
 
 // SEARCH POKEMON
 
-function searchForPokemon() {
+function searchForPokemonsByName() {
 
     let search = document.getElementById('filterPokemon').value;
-    const loadedPokemon = loadedPokemons.filter(p => p.name.includes(search));
-    console.log(loadedPokemon);
+    const filteredPokemons = loadedPokemons.filter(p => p.name.includes(search));
+    console.log(filteredPokemons);
+    renderPokemons(filteredPokemons);
+}
 
+function renderPokemons(pokemons) {
+    document.getElementById('listPokemonCards').innerHTML = '';
+    for (let j = 0; j < pokemons.length; j++) {
+        renderPokemon(pokemons[j])
+
+    }
 }
