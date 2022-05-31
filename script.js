@@ -2,7 +2,7 @@ let loadedPokemons = [];
 
 
 async function init() {
-    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=30`;
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=300`;
     let response = await fetch(url);
     let pokemonList = await response.json();
 
@@ -107,12 +107,14 @@ function templateOpenDetailViewHTML(pokemonId) {
             <img src="${pokemonImage}">
         </div>
 
+        <div class="containerAttribute">
         <div class="attribute">
-            <p>Ability:<span>${pokemonAbility}</span></p>
-            <p>Height:<span>${pokemonHeight}</span></p>
-            <p>Weight:<span>${pokemonWeight}</span></p>
-            <p>Base-State:<span>${pokemonBaseStat}</span> </p>
-            <p>Attack:<span>${pokemonAttack}</span> </p>
+            <p>Ability: <span> ${pokemonAbility}</span></p>
+            <p>Height: <span> ${pokemonHeight}m</span></p>
+            <p>Weight: <span> ${pokemonWeight}kg</span></p>
+            <p>Base-State: <span> ${pokemonBaseStat}</span> </p>
+            <p>Attack: <span> ${pokemonAttack}</span> </p>
+         </div>
         </div>
     </div>
 </div>
@@ -130,10 +132,10 @@ function searchForPokemonsByName() {
     renderPokemons(filteredPokemons);
 }
 
+
 function renderPokemons(pokemons) {
     document.getElementById('listPokemonCards').innerHTML = '';
     for (let j = 0; j < pokemons.length; j++) {
         renderPokemon(pokemons[j])
-
     }
 }

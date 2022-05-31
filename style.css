@@ -286,7 +286,7 @@
     }
     
     .containerContentDetailView {
-        height: 600px;
+        height: 650px;
         width: 560px;
         border-radius: 30px;
     }
@@ -317,13 +317,19 @@
         display: flex;
     }
     
-    .attribute {
-        align-items: flex-start;
+    .containerAttribute {
+        background-color: rgb(236, 236, 236);
+        color: #020506;
+        border-radius: 30px;
+        margin-left: 16px;
+        margin-right: 16px;
+        align-items: center;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        padding-left: 50px;
-        padding-bottom: 10px;
+    }
+    
+    .attribute {
+        padding-top: 10px;
         font-size: 20px;
     }
     /*Footer*/
@@ -377,7 +383,7 @@
     
     @media (max-width: 650px) {
         .containerContentDetailView {
-            height: 400px;
+            height: 475px;
             width: 300px;
         }
         .detailImg img {
@@ -385,10 +391,16 @@
             width: 110px;
             padding: 10px;
         }
+        .containerAttribute {
+            max-width: 250px;
+            max-height: 200px;
+            font-size: 10px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
         .attribute {
-            padding-left: 50px;
-            padding-bottom: 10px;
-            font-size: 13px;
+            padding-top: 10px;
+            font-size: 20px;
         }
     }
     
