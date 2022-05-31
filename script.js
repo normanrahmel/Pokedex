@@ -2,7 +2,7 @@ let loadedPokemons = [];
 
 
 async function init() {
-    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=300`;
+    let url = `https://pokeapi.co/api/v2/pokemon?offset=0&limit=598`;
     let response = await fetch(url);
     let pokemonList = await response.json();
 
