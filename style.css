@@ -80,16 +80,18 @@
     /*Pokemon Color-Typs*/
     
     .grass {
-        background-color: greenyellow;
+        background-color: #147a3c;
         padding: 10px;
         border-radius: 30px;
         display: block;
         text-align: center;
         width: 80px;
+        flex-direction: row;
+        color: white;
     }
     
     .fire {
-        background-color: rgb(191, 0, 0);
+        background-color: #aa1e22;
         padding: 10px;
         border-radius: 30px;
         color: white;
@@ -99,16 +101,17 @@
     }
     
     .bug {
-        background-color: rgb(249, 219, 50);
+        background-color: #1a4b26;
         padding: 10px;
         border-radius: 30px;
         display: block;
         text-align: center;
         width: 80px;
+        color: white;
     }
     
     .water {
-        background-color: rgb(56, 72, 251);
+        background-color: #1551e2;
         padding: 10px;
         border-radius: 30px;
         color: white;
@@ -118,12 +121,13 @@
     }
     
     .normal {
-        background-color: rgb(151, 151, 151);
+        background-color: #75505c;
         padding: 10px;
         border-radius: 30px;
         display: block;
         text-align: center;
         width: 80px;
+        color: white;
     }
     
     .poison {
@@ -133,6 +137,7 @@
         display: block;
         text-align: center;
         width: 80px;
+        color: white;
     }
     
     .electric {
@@ -151,6 +156,116 @@
         display: block;
         text-align: center;
         width: 80px;
+        color: white;
+    }
+    
+    .flying {
+        background-color: #49667e;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .dark {
+        background-color: #020506;
+        padding: 10px;
+        color: white;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+    }
+    
+    .dragon {
+        background-color: #438a97;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .fairy {
+        background-color: #961842;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .fighting {
+        background-color: #993f25;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .ghost {
+        background-color: #32336b;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .ground {
+        background-color: #a96f2b;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .ice {
+        background-color: #85d1f5;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+    }
+    
+    .psychic {
+        background-color: #a62a6a;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
+    }
+    
+    .rock {
+        background-color: #46180b;
+        padding: 10px;
+        color: white;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+    }
+    
+    .steel {
+        background-color: #5e746c;
+        padding: 10px;
+        border-radius: 30px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        color: white;
     }
     /*Detail-View*/
     
@@ -176,7 +291,7 @@
         border-radius: 30px;
     }
     
-    .detailButton {
+    .detailButtonAndIdNumber {
         align-items: flex-end;
         display: flex;
         justify-content: space-between;
@@ -237,6 +352,7 @@
     a:hover {
         text-decoration: underline !important;
     }
+    /*Responsive*/
     
     @media (max-width: 850px) {
         .footer {

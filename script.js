@@ -36,20 +36,21 @@ function renderPokemon(pokemon) {
         <div class="idNumberPokemon"><h2>#${pokemonIdNumber}</h2></div>
             <img id="listPokemonImage" class="listPokemonImage"  src="${pokemonImage}">
                 <h3 id="listPokemonName">${pokemonName}</h3>
-                <span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>
+                <div id="typList${pokemon.id}" style= "flex-direction: row;
+    display: flex; algin-items: space-evenly;"></div>
         </div>
     </div>
     `;
-    //renderPokemonTypes(pokemon);
+    renderPokemonTypes(pokemon);
 }
 
-/*
+
 function renderPokemonTypes(pokemon) {
     for (let index = 0; index < pokemon.types.length; index++) {
         const pokemonType = pokemon['types'][index]['type']['name'];
-        document.getElementById('typList' + pokemon.id).innerHTML += `<span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>`;
+        document.getElementById(`typList${pokemon.id}`).innerHTML += `<span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>`;
     }
-}*/
+}
 
 
 async function getPokemonByUrl(pokemonUrl) {
@@ -91,9 +92,9 @@ function templateOpenDetailViewHTML(pokemonId) {
 <div class="detailView">
     <div class="containerContentDetailView ${pokemonType}">
        
-        <div class="detailButton" >
+        <div class="detailButtonAndIdNumber" >
             <h2>#${pokemonIdNumber}</h2>
-            <button onclick="closeDetailView()" class="btn">close</button>
+            <button onclick="closeDetailView()" class="btn" style="color: #020506;">close</button>
         </div>
 
         <div class="detailName">
@@ -107,11 +108,11 @@ function templateOpenDetailViewHTML(pokemonId) {
         </div>
 
         <div class="attribute">
-            <p>Ability: <span>${pokemonAbility}</span></p>
-            <p>Height: <span>${pokemonHeight}</span></p>
-            <p>Weight: <span>${pokemonWeight}</span></p>
-            <p>Base-State: <span>${pokemonBaseStat}</span> </p>
-            <p>Attack: <span>${pokemonAttack}</span> </p>
+            <p>Ability:<span>${pokemonAbility}</span></p>
+            <p>Height:<span>${pokemonHeight}</span></p>
+            <p>Weight:<span>${pokemonWeight}</span></p>
+            <p>Base-State:<span>${pokemonBaseStat}</span> </p>
+            <p>Attack:<span>${pokemonAttack}</span> </p>
         </div>
     </div>
 </div>
