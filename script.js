@@ -27,18 +27,29 @@ function renderPokemon(pokemon) {
     const pokemonName = pokemon['forms'][0]['name'];
     const pokemonImage = pokemon['sprites']['other']['dream_world']['front_default'];
     const pokemonType = pokemon['types'][0]['type']['name'];
+    const pokemonIdNumber = pokemon['id'];
 
     document.getElementById('listPokemonCards').innerHTML += /*html*/ `
     
     <div class="pokemonCards" onclick="openDetailView(${pokemon.id})">
         <div>
+        <div class="idNumberPokemon"><h2>#${pokemonIdNumber}</h2></div>
             <img id="listPokemonImage" class="listPokemonImage"  src="${pokemonImage}">
                 <h3 id="listPokemonName">${pokemonName}</h3>
                 <span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>
         </div>
     </div>
     `;
+    //renderPokemonTypes(pokemon);
 }
+
+/*
+function renderPokemonTypes(pokemon) {
+    for (let index = 0; index < pokemon.types.length; index++) {
+        const pokemonType = pokemon['types'][index]['type']['name'];
+        document.getElementById('typList' + pokemon.id).innerHTML += `<span id="listPokemonFeature" class="${pokemonType}">${pokemonType}</span>`;
+    }
+}*/
 
 
 async function getPokemonByUrl(pokemonUrl) {
@@ -71,13 +82,17 @@ function templateOpenDetailViewHTML(pokemonId) {
     const pokemonAbility = pokemon['abilities'][0]['ability']['name'];
     const pokemonHeight = pokemon['height'];
     const pokemonWeight = pokemon['weight'];
+    const pokemonBaseStat = pokemon['stats'][0]['base_stat'];
+    const pokemonAttack = pokemon['stats'][0]['base_stat'];
+    const pokemonIdNumber = pokemon['id'];
 
     return /*html*/ ` 
 
 <div class="detailView">
     <div class="containerContentDetailView ${pokemonType}">
-
+       
         <div class="detailButton" >
+            <h2>#${pokemonIdNumber}</h2>
             <button onclick="closeDetailView()" class="btn">close</button>
         </div>
 
@@ -92,9 +107,11 @@ function templateOpenDetailViewHTML(pokemonId) {
         </div>
 
         <div class="attribute">
-            <p>Ability: <span id="detailAbility">${pokemonAbility}</span></p>
-            <p>Height: <span id="detailHeight">${pokemonHeight}</span></p>
-            <p>Weight: <span id="detailWeight">${pokemonWeight}</span></p>
+            <p>Ability: <span>${pokemonAbility}</span></p>
+            <p>Height: <span>${pokemonHeight}</span></p>
+            <p>Weight: <span>${pokemonWeight}</span></p>
+            <p>Base-State: <span>${pokemonBaseStat}</span> </p>
+            <p>Attack: <span>${pokemonAttack}</span> </p>
         </div>
     </div>
 </div>
@@ -105,8 +122,9 @@ function templateOpenDetailViewHTML(pokemonId) {
 // SEARCH POKEMON
 
 function searchForPokemon() {
-    let searchPokemon = document.getElementById('filterPokemon').value;
 
+    let search = document.getElementById('filterPokemon').value;
+    const loadedPokemon = loadedPokemons.filter(p => p.name.includes(search));
+    console.log(loadedPokemon);
 
-    console.log(searchPokemon.addEventListener(("keydown", searchForPokemon)))
 }

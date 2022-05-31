@@ -43,8 +43,8 @@
     }
     
     .listPokemonImage {
-        height: 150px;
-        width: 150px;
+        height: 140px;
+        width: 140px;
     }
     
     #listPokemonCards {
@@ -59,8 +59,8 @@
         border-radius: 30px;
         border: 1px solid black;
         margin: 25px;
-        height: 280px !important;
-        width: 280px !important;
+        height: 330px !important;
+        width: 320px !important;
         align-items: center;
         display: flex;
         justify-content: center;
@@ -69,6 +69,13 @@
     
     #listPokemonName {
         margin-bottom: 20px;
+    }
+    
+    .idNumberPokemon {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        opacity: 0.8;
     }
     /*Pokemon Color-Typs*/
     
@@ -164,7 +171,7 @@
     }
     
     .containerContentDetailView {
-        height: 560px;
+        height: 600px;
         width: 560px;
         border-radius: 30px;
     }
@@ -172,8 +179,9 @@
     .detailButton {
         align-items: flex-end;
         display: flex;
-        justify-content: flex-end;
-        margin: 15px;
+        justify-content: space-between;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     
     .detailName {
@@ -183,8 +191,8 @@
     }
     
     .detailImg img {
-        height: 300px;
-        width: 300px;
+        height: 250px;
+        width: 250px;
         padding: 30px;
     }
     
@@ -201,6 +209,7 @@
         flex-direction: column;
         padding-left: 50px;
         padding-bottom: 10px;
+        font-size: 20px;
     }
     /*Footer*/
     
@@ -249,6 +258,23 @@
         }
         .logo img {
             margin-bottom: 25px;
+        }
+    }
+    
+    @media (max-width: 650px) {
+        .containerContentDetailView {
+            height: 400px;
+            width: 300px;
+        }
+        .detailImg img {
+            height: 110px;
+            width: 110px;
+            padding: 10px;
+        }
+        .attribute {
+            padding-left: 50px;
+            padding-bottom: 10px;
+            font-size: 13px;
         }
     }
     
