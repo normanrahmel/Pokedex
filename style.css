@@ -5,6 +5,9 @@
         background-size: auto;
         background-attachment: fixed;
         margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
     
     .containerContent {
@@ -341,6 +344,7 @@
         padding: 80px;
         height: 150px;
         background-color: #dbdbdb;
+        margin-top: auto;
     }
     
     .paddingLeftRight {

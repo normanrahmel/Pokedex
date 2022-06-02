@@ -128,8 +128,13 @@ function searchForPokemonsByName() {
 
     let search = document.getElementById('filterPokemon').value;
     const filteredPokemons = loadedPokemons.filter(p => p.name.includes(search));
-    console.log(filteredPokemons);
-    renderPokemons(filteredPokemons);
+
+    if (search == '') {
+        renderPokemons(loadedPokemons)
+    } else {
+        console.log(filteredPokemons);
+        renderPokemons(filteredPokemons);
+    }
 }
 
 
