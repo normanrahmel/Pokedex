@@ -30,13 +30,6 @@
         background-color: white;
     }
     
-    input {
-        height: 60px;
-        width: 250px;
-        border-radius: 30px;
-        text-align: center;
-    }
-    
     img {
         opacity: 0.9;
     }
@@ -360,7 +353,52 @@
     a:hover {
         text-decoration: underline !important;
     }
+    /*Button und Input Field*/
+    
+    input {
+        height: 6rem;
+        width: 250px;
+        border-radius: 8px;
+        text-align: center;
+        border-style: none;
+    }
+    
+    .button-36 {
+        background-image: linear-gradient(92.88deg, #38599c 9.16%, #38599c 43.89%, #e9bb16 64.72%);
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        flex-shrink: 0;
+        font-weight: 500;
+        height: 6rem;
+        padding: 0 1.6rem;
+        text-align: center;
+        text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+        transition: all .5s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+    
+    .button-36:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+    }
     /*Responsive*/
+    
+    @media (max-width: 1000px) {
+        .logo {
+            flex-direction: column;
+        }
+        .logo img {
+            margin-bottom: 25px;
+        }
+        .button-36 {
+            margin-top: 25px;
+        }
+    }
     
     @media (max-width: 850px) {
         .footer {
@@ -376,12 +414,6 @@
         .socialMedia {
             margin-bottom: 16px;
             margin-top: 16px;
-        }
-        .logo {
-            flex-direction: column;
-        }
-        .logo img {
-            margin-bottom: 25px;
         }
     }
     

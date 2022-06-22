@@ -122,8 +122,6 @@ function templateOpenDetailViewHTML(pokemonId) {
 }
 
 
-// SEARCH POKEMON
-
 function searchForPokemonsByName() {
 
     let search = document.getElementById('filterPokemon').value;
